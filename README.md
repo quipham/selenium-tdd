@@ -1,0 +1,2 @@
+- Java SDK 8
+- Execute by "maven clean test"
