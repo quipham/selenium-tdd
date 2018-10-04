@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Guru Bank System Exam Test" >
+    <test name="Guru Bank System Test">
+        <classes>
+            <class name="suites.GuruBankSystemTest"/>
+        </classes>
+    </test>
+</suite>

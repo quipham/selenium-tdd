@@ -1,4 +1,4 @@
-package de.anibis.manage;
+package com.uitest.manage;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
