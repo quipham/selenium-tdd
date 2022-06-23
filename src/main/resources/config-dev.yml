@@ -1,0 +1,10 @@
+endpoint:
+  apiUrl: https://api.dev.finbase.vn/
+
+data:
+  customer:
+    email:
+    pass:
+
+flag:
+  isHeadless: false
