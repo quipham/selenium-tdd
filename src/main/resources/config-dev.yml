@@ -1,10 +1,10 @@
-endpoint:
-  apiUrl: https://api.dev.finbase.vn/
+webUrl: https://www.chotot.com/
 
 data:
   customer:
-    email:
-    pass:
+    phone: 0902475388
+    pass: S@mple!123456
 
-flag:
+flags:
+  browser: chrome
   isHeadless: false

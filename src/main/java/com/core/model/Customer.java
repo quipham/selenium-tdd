@@ -14,7 +14,7 @@ public class Customer {
     private String city;
     private String state;
     private String pin;
-    private String mobileNumber;
+    private String phone;
     private String email;
     private String pass;
 }

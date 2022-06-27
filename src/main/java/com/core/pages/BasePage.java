@@ -1,29 +1,40 @@
 package com.core.pages;
 
+import static java.time.Duration.ofSeconds;
+
 import com.core.manage.DriverFactory;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 abstract class BasePage {
     WebDriver driver;
+    WebDriverWait wait;
     JavascriptExecutor js;
 
     BasePage() {
         driver = DriverFactory.getDriver();
+        wait = new WebDriverWait(driver, ofSeconds(15));
         js = (JavascriptExecutor)driver;
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//*[@name = 'sub']")
-    WebElement submitBtn;
+    public void clickElementByJS(WebElement element) {
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", element);
+    }
 
-    @FindBy(xpath = "//*[@class = 'heading3']")
-    public WebElement messageLine;
+    protected void clickElement(WebElement e) {
+        wait.until(ExpectedConditions.elementToBeClickable(e));
+        e.click();
+    }
 
-    static final String NEW_ACCOUNT_URL = "http://demo.guru99.com/v4/manager/addAccount.php";
-    static final String NEW_CUSTOMER_URL = "http://demo.guru99.com/v4/manager/addcustomerpage.php";
-    static final String DEPOSIT_URL = "http://demo.guru99.com/v4/manager/DepositInput.php";
+    protected void sendKeys(WebElement e, String value) {
+        wait.until(ExpectedConditions.visibilityOf(e));
+        e.sendKeys(value);
+    }
 }

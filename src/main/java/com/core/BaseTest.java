@@ -17,9 +17,10 @@ public abstract class BaseTest {
 
     @BeforeClass
     public void setUpClass() {
+        setYamlConfig();
         config = getYamlConfig();
-        String baseUrl = config.;
-        DriverFactory.setDriver(DriverFactory.initializeDriver("chrome"));
+        String baseUrl = config.getWebUrl();
+        DriverFactory.setDriver(DriverFactory.initializeDriver(config.getFlags().getBrowser()));
         driver = DriverFactory.getDriver();
         homePage = new HomePage();
         loginPage = new LoginPage();
