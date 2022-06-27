@@ -1,0 +1,10 @@
+webUrl: https://www.chotot.com/
+
+data:
+  customer:
+    phone: 0902475388
+    pass: S@mple!123456
+
+flags:
+  browser: chrome
+  isHeadless: false
